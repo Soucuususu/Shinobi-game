@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0d13">
+<title>SHINOBI: REQUIEM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">影</span><div><b>SHINOBI</b><small>REQUIEM</small></div></div>
+    <div class="top-right"><span id="phaseTag" class="pill">ORIGEM</span><button class="icon-btn" id="soundBtn" aria-label="Som">♫</button></div>
+  </header>
+
+  <main>
+    <section id="creator" class="screen active">
+      <div class="hero">
+        <div class="eyebrow">UMA LENDA COMEÇA EM SILÊNCIO</div>
+        <h1>Seu caminho.<br><em>Seu destino.</em></h1>
+        <p>Crie seu ninja. Descubra sua aldeia. Sobreviva ao que vem depois.</p>
+      </div>
+      <div class="creator-grid">
+        <div class="panel character-panel">
+          <div class="panel-head"><span>01 / APARÊNCIA</span><span class="muted">PERSONALIZE</span></div>
+          <div class="character-stage">
+            <div class="moon"></div><div class="stage-lines"></div>
+            <div id="stickman" class="stickman">
+              <div class="scarf"></div><div class="head"><div class="headband"></div><div class="eye"></div></div>
+              <div class="torso"></div><div class="arm arm-l"></div><div class="arm arm-r"></div>
+              <div class="leg leg-l"></div><div class="leg leg-r"></div><div class="sword"></div>
+            </div>
+            <div class="stage-name" id="previewName">NOVO SHINOBI</div>
+          </div>
+          <label class="field-label" for="nameInput">NOME DO NINJA</label>
+          <input id="nameInput" maxlength="18" placeholder="Ex.: Akio" value="Akio">
+          <div class="field-row">
+            <div class="field"><label class="field-label">COR DO CORPO</label><div class="swatches" id="skinSwatches">
+              <button class="swatch selected" data-color="#e5e7eb" style="--swatch:#e5e7eb" aria-label="Prata"></button>
+              <button class="swatch" data-color="#181a22" style="--swatch:#181a22" aria-label="Sombra"></button>
+              <button class="swatch" data-color="#d6a36c" style="--swatch:#d6a36c" aria-label="Areia"></button>
+              <button class="swatch" data-color="#a7f3d0" style="--swatch:#a7f3d0" aria-label="Jade"></button>
+              <button class="swatch" data-color="#dca4ff" style="--swatch:#dca4ff" aria-label="Violeta"></button>
+            </div></div>
+            <div class="field"><label class="field-label">UNIFORME</label><div class="swatches" id="outfitSwatches">
+              <button class="swatch selected" data-color="#202a3a" style="--swatch:#202a3a" aria-label="Azul noite"></button>
+              <button class="swatch" data-color="#761f2a" style="--swatch:#761f2a" aria-label="Carmesim"></button>
+              <button class="swatch" data-color="#263e32" style="--swatch:#263e32" aria-label="Floresta"></button>
+              <button class="swatch" data-color="#554077" style="--swatch:#554077" aria-label="Roxo"></button>
+              <button class="swatch" data-color="#b9a16b" style="--swatch:#b9a16b" aria-label="Ouro"></button>
+            </div></div>
+          </div>
+          <label class="field-label" for="styleSelect">ESTILO DE NINJA</label>
+          <select id="styleSelect"><option value="Errante">Errante — equilíbrio</option><option value="Guardião">Guardião — defesa</option><option value="Executor">Executor — dano</option><option value="Sombra">Sombra — velocidade</option></select>
+        </div>
+        <div class="panel origin-panel">
+          <div class="panel-head"><span>02 / ORIGEM</span><span class="muted">ALEATÓRIA</span></div>
+          <div class="mystery-card"><div class="seal">?</div><div><b>Sua aldeia ainda é desconhecida</b><p>Existem dezenas de aldeias. As míticas são tão raras que muitos acreditam serem lendas.</p></div></div>
+          <div class="origin-stats"><div><strong>30+</strong><span>ALDEIAS</span></div><div><strong>25</strong><span>ELEMENTOS</span></div><div><strong>∞</strong><span>CAMINHOS</span></div></div>
+          <div class="rule"></div>
+          <div class="quote">“O talento abre a porta. O que você faz depois define a lenda.”</div>
+          <button id="beginBtn" class="primary-btn">DESCOBRIR MEU DESTINO <span>↗</span></button>
+          <p class="tiny muted">A aldeia, o clã e a afinidade serão sorteados no início da jornada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reveal" class="screen">
+      <div class="reveal-wrap panel">
+        <div class="eyebrow">REGISTRO SHINOBI • ARQUIVO DESBLOQUEADO</div>
+        <div id="villageSeal" class="big-seal">影</div>
+        <div id="villageRarity" class="rarity">ALDEIA COMUM</div>
+        <h1 id="villageName">Aldeia do Pinheiro</h1>
+        <p id="villageDesc" class="reveal-desc"></p>
+        <div class="reveal-stats">
+          <div><span>CLÃ</span><b id="clanName">Clã Kaze</b></div>
+          <div><span>AFINIDADE</span><b id="elementName">Vento</b></div>
+          <div><span>POTENCIAL</span><b id="potentialName">Prodígio</b></div>
+        </div>
+        <button id="enterVillageBtn" class="primary-btn">INICIAR INFÂNCIA <span>→</span></button>
+      </div>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="game-layout">
+        <div class="main-column">
+          <div class="scene panel">
+            <div class="scene-top"><span id="locationLabel">ALDEIA DO PINHEIRO</span><span id="weatherLabel">NEBLINA • MANHÃ</span></div>
+            <div id="sceneArt" class="scene-art village-scene">
+              <div class="sun"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="roof roof1"></div><div class="roof roof2"></div><div class="lantern"></div>
+              <div class="hero-stick" id="gameStick"><div class="hero-head"></div><div class="hero-body"></div><div class="hero-arm left"></div><div class="hero-arm right"></div><div class="hero-leg left"></div><div class="hero-leg right"></div><div class="hero-blade"></div></div>
+              <div class="scene-caption" id="sceneCaption">Uma nova vida começa.</div>
+            </div>
+            <div class="story-card"><div class="story-icon" id="storyIcon">✦</div><div><span id="storyKicker" class="eyebrow">ANO 1 • INFÂNCIA</span><p id="storyText">A névoa cobre os telhados da aldeia. Seu treinamento começa hoje.</p></div></div>
+          </div>
+          <div class="stats-grid">
+            <div class="stat"><div class="stat-head"><span>VIDA</span><b id="hpText">100 / 100</b></div><div class="bar"><i id="hpBar" style="width:100%"></i></div></div>
+            <div class="stat"><div class="stat-head"><span>CHAKRA</span><b id="chakraText">40 / 40</b></div><div class="bar chakra"><i id="chakraBar" style="width:100%"></i></div></div>
+            <div class="stat"><div class="stat-head"><span>EXPERIÊNCIA</span><b id="xpText">0 / 100</b></div><div class="bar xp"><i id="xpBar" style="width:0%"></i></div></div>
+          </div>
+          <div class="panel actions-panel">
+            <div class="panel-head"><span>AÇÕES</span><span id="actionHint" class="muted">ESCOLHA SEU PRÓXIMO PASSO</span></div>
+            <div id="actionGrid" class="action-grid">
+              <button class="action-card" data-action="train"><span class="action-symbol">⌁</span><b>Treinar</b><small>Exercício manual</small></button>
+              <button class="action-card" data-action="explore"><span class="action-symbol">⌖</span><b>Explorar</b><small>Descobertas e riscos</small></button>
+              <button class="action-card" data-action="missions"><span class="action-symbol">▤</span><b>Missões</b><small>Ganhe recompensas</small></button>
+              <button class="action-card" data-action="inventory"><span class="action-symbol">◇</span><b>Inventário</b><small>Itens e equipamento</small></button>
+            </div>
+          </div>
+        </div>
+        <aside class="side-column">
+          <div class="panel profile-panel">
+            <div class="panel-head"><span>SHINOBI</span><span class="online-dot"></span></div>
+            <div class="profile-mini"><div class="mini-avatar" id="miniAvatar">影</div><div><b id="profileName">Akio</b><span id="profileTitle">Aprendiz • Nível 1</span></div></div>
+            <div class="profile-line"><span>IDADE</span><b id="ageText">8 anos</b></div>
+            <div class="profile-line"><span>NÍVEL</span><b id="levelText">1</b></div>
+            <div class="profile-line"><span>RYO</span><b id="moneyText">120</b></div>
+            <div class="profile-line"><span>ESTILO</span><b id="styleText">Errante</b></div>
+          </div>
+          <div class="panel talents-panel"><div class="panel-head"><span>ATRIBUTOS</span><span class="muted">BASE</span></div>
+            <div class="talent"><span>Força</span><b id="strengthText">8</b><div class="microbar"><i id="strengthBar"></i></div></div>
+            <div class="talent"><span>Velocidade</span><b id="speedText">8</b><div class="microbar"><i id="speedBar"></i></div></div>
+            <div class="talent"><span>Controle</span><b id="controlText">8</b><div class="microbar"><i id="controlBar"></i></div></div>
+            <div class="talent"><span>Instinto</span><b id="instinctText">8</b><div class="microbar"><i id="instinctBar"></i></div></div>
+          </div>
+          <div class="panel objective-panel"><div class="panel-head"><span>OBJETIVO ATUAL</span></div><div class="objective-icon">◈</div><b id="objectiveTitle">Prove seu potencial</b><p id="objectiveText">Treine e cresça antes de completar 15 anos.</p><div class="objective-progress"><i id="objectiveBar"></i></div><small id="objectiveCount">0 / 3 treinos</small></div>
+          <button id="advanceBtn" class="advance-btn">AVANÇAR O TEMPO <span>→</span></button>
+          <button id="saveBtn" class="secondary-btn">SALVAR JORNADA</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" data-tab="home"><span>⌂</span>Jornada</button>
+    <button class="nav-item" data-tab="skills"><span>✧</span>Técnicas</button>
+    <button class="nav-item" data-tab="map"><span>⌖</span>Mapa</button>
+    <button class="nav-item" data-tab="profile"><span>◉</span>Perfil</button>
+  </nav>
+</div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" data-close="true"></div>
+  <div class="modal-card"><button class="modal-close" data-close="true">×</button><div id="modalEyebrow" class="eyebrow">TREINAMENTO</div><h2 id="modalTitle">Treino de reflexos</h2><div id="modalContent"></div><div id="modalActions" class="modal-actions"></div></div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="game.js"></script>
+</body>
+</html>
