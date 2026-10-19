@@ -1,26 +1,24 @@
-# SHINOBI: REQUIEM — protótipo jogável
+# SHINOBI: REQUIEM — Action RPG prototype
 
-Um RPG de ação 2D em HTML, CSS e JavaScript, preparado para GitHub Pages e para telas de celular/PC.
+Esta versão é um jogo de ação 2D em canvas, não um simulador de menus.
 
-## Como publicar no GitHub pelo celular
-1. Baixe e extraia `shinobi_requiem.zip`.
-2. Abra seu repositório GitHub (ou crie um chamado `shinobi-requiem`).
-3. Envie `index.html`, `style.css` e `game.js` para a raiz do repositório. O `README.md` também pode ser enviado.
-4. Abra **Settings → Pages**.
-5. Em **Build and deployment**, selecione **Deploy from a branch**, escolha `main` e `/ (root)`, depois salve.
-6. Aguarde o GitHub Pages publicar o endereço.
+## Controles no PC
+- A/D ou setas: mover
+- J/Z: ataque de espada com combos
+- K/X: técnica elemental especial (consome chakra)
+- Espaço/W/↑: pular e pulo duplo
+- Shift/L: esquiva rápida com invulnerabilidade breve
+- E: treinamento manual
+- F: coletar itens
+- Esc: pausar
 
-## O que já funciona neste protótipo
-- Criação do personagem: nome, cor do corpo, uniforme e estilo.
-- Sorteio de aldeia, raridade, clã e afinidade elemental.
-- Interface responsiva para celular e computador.
-- Treino manual com escolha de tempo e ganhos diferentes.
-- Atributos, vida, chakra, XP, níveis e dinheiro.
-- Exploração com tesouros e encontros com monstros.
-- Combate por escolhas, missões, inventário, técnicas e mapa.
-- Evento narrativo aos 15 anos com escolha entre vingança e descobrir a verdade.
-- Elixir da Vida com chance extremamente baixa de aparecer após os 15 anos.
-- Salvamento local pelo botão “Salvar jornada”.
+## Celular
+Use as setas, esquiva, pulo, ataque e especial. Recomendado jogar na horizontal.
 
-## Observações
-Este é o primeiro protótipo funcional, não a versão final completa. As aldeias e os 25 elementos já estão representados como base de conteúdo; para a versão maior, cada elemento precisa de seu próprio conjunto de técnicas, animações e efeitos, e a campanha precisa de mais cenas, chefes, bases e rotas de história. O salvamento usa o armazenamento local do navegador, portanto fica no mesmo dispositivo/navegador.
+## Publicar no GitHub Pages
+Envie `index.html`, `style.css` e `game.js` para a raiz do repositório. Depois, Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save.
+
+## Implementado nesta base
+Criação de personagem, sorteio de aldeia/raridade/clã/elemento, cenário em camadas, movimento físico, pulo duplo, esquiva, combos, técnica especial, inimigos que perseguem e atacam, vida/chakra/XP/níveis, drops, itens, treino e salvamento local.
+
+É um protótipo inicial de ação. A campanha completa aos 15 anos, 30+ aldeias com conteúdo próprio, 25 conjuntos elementais, chefes, regiões e animações finais são marcos das próximas versões.
